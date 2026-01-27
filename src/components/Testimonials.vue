@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
+
+import Autoplay from "embla-carousel-autoplay";
+
 
 import {
   Carousel,
@@ -17,130 +16,115 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import { Star } from "lucide-vue-next";
 
 interface ReviewProps {
   image: string;
   name: string;
   userName: string;
+  title: string;
   comment: string;
-  rating: number;
+  avatar: string
 }
 
 const reviewList: ReviewProps[] = [
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe",
-    userName: "Product Manager",
-    comment:
-      "Wow Vue + Shadcn-Vue is awesome!. This template lets me change colors, fonts and images to match my brand identity. ",
-    rating: 5.0,
+    name: "Sofía Vega",
+    userName: "@sofi",
+    title: "EDIFICACIONES",
+    comment: "Transformamos visiones en estructuras sólidas. Desarrollamos proyectos integrales de edificación residencial, comercial e industrial",
+    image: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+    avatar: "https://res.cloudinary.com/xxx/image/upload/w_100,q_auto,f_auto/avatar.webp"
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "Sophia Collins",
-    userName: "Cybersecurity Analyst",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. ",
-    rating: 4.8,
+    name: "Sofía Vega",
+    userName: "@sofi",
+    title: "OBRA CIVIL",
+    comment: "Infraestructura que impulsa el desarrollo. Ejecutamos proyectos de gran escala con precisión técnica, desde cimentaciones profundas hasta estructuras complejas",
+    image: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+    avatar: "https://res.cloudinary.com/xxx/image/upload/w_100,q_auto,f_auto/avatar.webp"
   },
 
   {
-    image: "https://github.com/shadcn.png",
-    name: "Adam Johnson",
-    userName: "Chief Technology Officer",
-    comment:
-      "Lorem ipsum dolor sit amet,exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    rating: 4.9,
+    name: "Sofía Vega",
+    userName: "@sofi",
+    title: "OBRAS DE PROTECCIÓN PORTUARIA",
+    comment: "Ingeniería frente al mar. Especialistas en el diseño y construcción, utilizando tecnología avanzada para proteger las zonas portuarias contra el impacto del oleaje y la erosión",
+    image: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+    avatar: "https://res.cloudinary.com/xxx/image/upload/w_100,q_auto,f_auto/avatar.webp"
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "Ethan Parker",
-    userName: "Data Scientist",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    rating: 5.0,
+    name: "Sofía Vega",
+    userName: "@sofi",
+    title: "ACABADOS",
+    comment: "El detalle que marca la diferencia. Ofrecemos soluciones estéticas y duraderas en interiores y exteriores",
+    image: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+    avatar: "https://res.cloudinary.com/xxx/image/upload/w_100,q_auto,f_auto/avatar.webp"
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "Ava Mitchell",
-    userName: "IT Project Manager",
-    comment:
-      "Lorem ipsum dolor sit amet, tempor incididunt  aliqua. Ut enim ad minim veniam, quis nostrud incididunt consectetur adipiscing elit.",
-    rating: 5.0,
-  },
-  {
-    image: "https://github.com/shadcn.png",
-    name: "Isabella Reed",
-    userName: "DevOps Engineer",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    rating: 4.9,
+    name: "Sofía Vega",
+    userName: "@sofi",
+    title: "TRAMOS CARRETEROS",
+    comment: "Conectando caminos, acercando destinos. Construcción y mantenimiento de vialidades y carreteras con pavimentos de alta resistencia",
+    image: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+    avatar: "https://res.cloudinary.com/xxx/image/upload/w_100,q_auto,f_auto/avatar.webp"
   },
 ];
+
+const autoplay = Autoplay({
+  delay: 3000,      // tiempo entre slides (ms)
+  stopOnMouseEnter: true, // se pausa al pasar el mouse
+  stopOnInteraction: false, // sigue aunque el usuario interactúe
+});
+
 </script>
 
 <template>
-  <section
-    id="testimonials"
-    class="container py-24 sm:py-32"
-  >
+  <section id="testimonials" class="container py-24 sm:py-32">
     <div class="text-center mb-8">
       <h2 class="text-lg text-primary text-center mb-2 tracking-wider">
-        Testimonials
+        QUE HACEMOS
       </h2>
 
       <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">
-        Hear What Our 1000+ Clients Say
+        NUESTROS SERVICIOS DE CONSTRUCCIÓN
       </h2>
+
+      <h3 class="text-1xl md:text-1xl text-center mb-4">
+        Tenemos la confianza y la seguridad de que seremos su mejor opción en la realización de sus proyectos como:
+      </h3>
     </div>
 
-    <Carousel
-      :opts="{
-        align: 'start',
-      }"
-      class="relative w-[80%] sm:w-[90%] lg:max-w-screen-xl mx-auto"
-    >
+
+    <Carousel :plugins="[autoplay]" :opts="{ align: 'start', loop:true }" class="relative w-[80%] sm:w-[90%] lg:max-w-screen-xl mx-auto">
       <CarouselContent>
-        <CarouselItem
-          v-for="review in reviewList"
-          :key="review.name"
-          class="md:basis-1/2 lg:basis-1/3"
-        >
-          <Card class="bg-muted/50 dark:bg-card">
-            <CardContent class="pt-6 pb-0">
-              <div class="flex gap-1 pb-6">
-                <Star class="size-4 fill-primary text-primary" />
-                <Star class="size-4 fill-primary text-primary" />
-                <Star class="size-4 fill-primary text-primary" />
-                <Star class="size-4 fill-primary text-primary" />
-                <Star class="size-4 fill-primary text-primary" />
-              </div>
+        <CarouselItem v-for="review in reviewList" :key="review.name" class="md:basis-1/2 lg:basis-1/3 flex">
+          <Card class="overflow-hidden bg-muted/50 dark:bg-card">
+            <!-- IMAGEN -->
+            <div class="relative h-48 w-full">
+              <img :src="review.image" alt="cover" loading="lazy" class="h-full w-full object-cover" />
 
-              "{{ review.comment }}"
+              <!-- TÍTULO SOBRE LA IMAGEN -->
+              <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+                <h3 class="text-white text-lg font-semibold">
+                  {{ review.title }}
+                </h3>
+              </div>
+            </div>
+
+            <!-- CONTENIDO -->
+            <CardContent class="flex-1 pt-4">
+              <p class="text-sm text-muted-foreground">
+                "{{ review.comment }}"
+              </p>
             </CardContent>
-
-            <CardHeader>
-              <div class="flex flex-row items-center gap-4">
-                <Avatar>
-                  <AvatarImage
-                    src="https://www.radix-vue.com/logo.svg"
-                    alt="@radix-vue"
-                  />
-                  <AvatarFallback>SV</AvatarFallback>
-                </Avatar>
-
-                <div class="flex flex-col">
-                  <CardTitle class="text-lg">{{ review.name }}</CardTitle>
-                  <CardDescription>{{ review.userName }}</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
+           
           </Card>
         </CarouselItem>
       </CarouselContent>
+
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
+
   </section>
 </template>

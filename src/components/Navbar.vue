@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { ref } from "vue";
+import logoPegsa from '@/assets/log-pegsa.jpeg'
 
 import { useColorMode } from "@vueuse/core";
 const mode = useColorMode();
-mode.value = "dark";
+mode.value = "light";
 
 import {
   NavigationMenu,
@@ -23,8 +24,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-import { ChevronsDown, Menu } from "lucide-vue-next";
-import GithubIcon from "@/icons/GithubIcon.vue";
+import { Menu } from "lucide-vue-next";
 import ToggleTheme from "./ToggleTheme.vue";
 
 interface RouteProps {
@@ -70,9 +70,11 @@ const isOpen = ref<boolean>(false);
     'w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true,
   }">
     <a href="/" class="font-bold text-lg flex items-center">
-      <ChevronsDown
-        class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-      PEGSA
+      <div
+        class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-13 h-12 mr-2 flex items-center justify-center">
+        <img :src="logoPegsa" alt="PEGSA" class="w-13 h-12 object-contain" />
+      </div>
+      <!--PEGSA-->
     </a>
     <!-- Mobile -->
     <div class="flex items-center lg:hidden">
@@ -86,9 +88,11 @@ const isOpen = ref<boolean>(false);
             <SheetHeader class="mb-4 ml-4">
               <SheetTitle class="flex items-center">
                 <a href="/" class="flex items-center">
-                  <ChevronsDown
-                    class="bg-gradient-to-tr from-primary/70 via-primary to-primary/70 rounded-lg size-9 mr-2 border text-white" />
-                  PEGSA
+                  <div
+                    class="bg-gradient-to-tr from-primary/70 via-primary to-primary/70 rounded-lg w-13 h-11 mr-2 border text-white justify-center">
+                    <img :src="logoPegsa" alt="PEGSA" class="w-13 h-10 object-contain" />
+                  </div>
+
                 </a>
               </SheetTitle>
             </SheetHeader>
@@ -130,13 +134,6 @@ const isOpen = ref<boolean>(false);
 
     <div class="hidden lg:flex">
       <ToggleTheme />
-
-      <Button as-child size="sm" variant="ghost" aria-label="View on GitHub">
-        <a aria-label="View on GitHub" href="https://github.com/leoMirandaa/shadcn-vue-landing-page.git"
-          target="_blank">
-          <GithubIcon class="size-5" />
-        </a>
-      </Button>
     </div>
   </header>
 </template>

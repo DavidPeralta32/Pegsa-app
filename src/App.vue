@@ -18,16 +18,19 @@ import Footer from "./components/Footer.vue";
 <template>
   <Navbar />
   <Hero />
-  <Sponsors />
-  <Benefits />
-  <Features />
-  <Services />
   <HowItWorks />
   <Testimonials />
+  <Sponsors />
   <Team />
-  <Community />
-  <Pricing />
+
+  <!--<Benefits />
+  <Features />
+  <Services />-->
+  
+
+  <!--<Community />-->
+  <!--<Pricing />-->
   <Contact />
-  <FAQ />
+  <!--<FAQ />-->
   <Footer />
 </template>

@@ -11,31 +11,31 @@ interface HowItWorksProps {
 
 const HowItWorksList: HowItWorksProps[] = [
   {
-    badgeTitle: "Contribute",
-    title: "Make a Difference with Every Contribution",
+    badgeTitle: "Valores",
+    title: "Los principios que guían cada uno de nuestros proyectos",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, quasi sint reiciendis quidem iure.",
+      "Confianza, respeto, cooperación, responsabilidad, trabajo en equipo, calidad, profesionalismo y honradez.",
     image: "roboto.png",
   },
   {
-    badgeTitle: "Discover",
-    title: "Create an Impact with Every Choice",
+    badgeTitle: "VISIÓN",
+    title: "Construir liderazgo y confianza a largo plazo",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, sint reiciendis quidem iure veritatis optio facere tenetur.",
+      "Ser la empresa constructora veracruzana líder en infraestructura portuaria, urbana e industrial, reconocida a nivel nacional por su calidad, transparencia y compromiso con el desarrollo sostenible, generando confianza en cada obra que realizamos.",
     image: "runner.png",
   },
   {
-    badgeTitle: "Innovate",
-    title: "Make Every Action Count",
+    badgeTitle: "MISIÓN",
+    title: "Transformar ideas en obras que impulsan el desarrollo",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, odit similique quasi sint.",
+      "Diseñar, construir y ejecutar proyectos de infraestructura que fortalezcan el crecimiento económico y social de Veracruz y México, ofreciendo soluciones innovadoras y seguras, con un equipo altamente profesional y comprometido con la excelencia, la ética y la responsabilidad social.",
     image: "pacheco.png",
   },
   {
-    badgeTitle: "Collaborate",
-    title: "Tackle this challenge together",
+    badgeTitle: "OBJETIVO GENERAL",
+    title: "Crecimiento sostenido con resultados medibles",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, quasi sint reiciendis quidem iure.",
+      "Brindar servicios de construcción de alta calidad, seguros y sostenibles, cumpliendo con plazos y requerimientos establecidos, logrando un índice de satisfacción del cliente ≥ 90%, y aumentar en 20% la participación en licitaciones públicas y privadas para 2026, consolidando el crecimiento competitivo de la empresa.",
     image: "gamestation.png",
   },
 ];
@@ -48,11 +48,11 @@ const HowItWorksList: HowItWorksProps[] = [
   >
     <div class="text-center mb-8">
       <h2 class="text-lg text-primary text-center mb-2 tracking-wider">
-        How It Works
+        Nosotros
       </h2>
 
       <h2 class="text-3xl md:text-4xl text-center font-bold">
-        Step-by-Step Process
+        PROCESOS PASO A PASO
       </h2>
     </div>
 
@@ -74,7 +74,7 @@ const HowItWorksList: HowItWorksProps[] = [
             </div>
 
             <CardTitle>
-              {{ title }}
+              {{ title.toUpperCase() }}
             </CardTitle>
           </CardHeader>
 
