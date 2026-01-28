@@ -4,14 +4,7 @@ import { Button } from "./ui/button";
 import { Card, CardHeader, CardContent, CardFooter } from "./ui/card";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
+
 import { Textarea } from "./ui/textarea";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
@@ -36,69 +29,65 @@ const contactForm = reactive<ContactFormeProps>({
 const invalidInputForm = ref<boolean>(false);
 
 const handleSubmit = () => {
-  const { firstName, lastName, email, subject, message } = contactForm;
+  const { firstName, lastName, email, message } = contactForm;
   console.log(contactForm);
 
-  const mailToLink = `mailto:leomirandadev@gmail.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
+  const mailToLink = `mailto:davi32peralta@gmail.com?subject=Contacto&body=Hola mi nombre es: ${firstName} ${lastName}, mi correo es: ${email}. %0D%0A${message}`;
 
   window.location.href = mailToLink;
 };
 </script>
 
 <template>
-  <section
-    id="contact"
-    class="container py-24 sm:py-32"
-  >
+  <section id="contact" class="container py-24 sm:py-32">
     <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
         <div class="mb-4">
-          <h2 class="text-lg text-primary mb-2 tracking-wider">Contact</h2>
+          <h2 class="text-lg text-primary mb-2 tracking-wider">CONTACTO</h2>
 
-          <h2 class="text-3xl md:text-4xl font-bold">Connect With Us</h2>
+          <h2 class="text-3xl md:text-4xl font-bold">Contactate con nosotros</h2>
         </div>
         <p class="mb-8 text-muted-foreground lg:w-5/6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          ipsam sint enim exercitationem ex autem corrupti quas tenetur
+          Estamos listos para impulsar tu próximo proyecto. Nuestro equipo de expertos está disponible para resolver tus dudas y ofrecerte la asesoría técnica que necesitas.
         </p>
 
         <div class="flex flex-col gap-4">
           <div>
             <div class="flex gap-2 mb-1">
               <Building2 />
-              <div class="font-bold">Find Us</div>
+              <div class="font-bold">Dirección</div>
             </div>
 
-            <div>742 Evergreen Terrace, Springfield, IL 62704</div>
+            <div>AV. Tiburón No. 508, Fracc. Costa de Oro Boca del Río, Ver. C.P. 94299</div>
           </div>
 
           <div>
             <div class="flex gap-2 mb-1">
               <Phone />
-              <div class="font-bold">Call Us</div>
+              <div class="font-bold">Telefono</div>
             </div>
 
-            <div>+1 (619) 123-4567</div>
+            <div>+52 229 935 0923</div>
           </div>
 
           <div>
             <div class="flex gap-2 mb-1">
               <Mail />
-              <div class="font-bold">Mail Us</div>
+              <div class="font-bold">Correo</div>
             </div>
 
-            <div>leomirandadev@gmail.com</div>
+            <div>contacto@pegsa.com</div>
           </div>
 
           <div>
             <div class="flex gap-2">
               <Clock />
-              <div class="font-bold">Visit Us</div>
+              <div class="font-bold">Horario</div>
             </div>
 
             <div>
-              <div>Monday - Friday</div>
-              <div>8AM - 4PM</div>
+              <div>Lunes - Sabado</div>
+              <div>9AM - 6PM</div>
             </div>
           </div>
         </div>
@@ -108,89 +97,38 @@ const handleSubmit = () => {
       <Card class="bg-muted/60 dark:bg-card">
         <CardHeader class="text-primary text-2xl"> </CardHeader>
         <CardContent>
-          <form
-            @submit.prevent="handleSubmit"
-            class="grid gap-4"
-          >
+          <form @submit.prevent="handleSubmit" class="grid gap-4">
             <div class="flex flex-col md:flex-row gap-8">
               <div class="flex flex-col w-full gap-1.5">
-                <Label for="first-name">First Name</Label>
-                <Input
-                  id="first-name"
-                  type="text"
-                  placeholder="Leopoldo"
-                  v-model="contactForm.firstName"
-                />
+                <Label for="first-name">Nombre</Label>
+                <Input id="first-name" type="text" placeholder="Tu nombre" v-model="contactForm.firstName" />
               </div>
 
               <div class="flex flex-col w-full gap-1.5">
-                <Label for="last-name">Last Name</Label>
-                <Input
-                  id="last-name"
-                  type="text"
-                  placeholder="Miranda"
-                  v-model="contactForm.lastName"
-                />
+                <Label for="last-name">Apellido</Label>
+                <Input id="last-name" type="text" placeholder="Tu apellido" v-model="contactForm.lastName" />
               </div>
             </div>
 
             <div class="flex flex-col gap-1.5">
-              <Label for="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="leomirandadev@gmail.com"
-                v-model="contactForm.email"
-              />
+              <Label for="email">Correo</Label>
+              <Input id="email" type="email" placeholder="micorreo@gmail.com" v-model="contactForm.email" />
             </div>
 
             <div class="flex flex-col gap-1.5">
-              <Label for="subject">Subject</Label>
-
-              <Select v-model="contactForm.subject">
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a subject" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value="Web Development">
-                      Web Development
-                    </SelectItem>
-                    <SelectItem value="Mobile Development">
-                      Mobile Development
-                    </SelectItem>
-                    <SelectItem value="Figma Design"> Figma Design </SelectItem>
-                    <SelectItem value="REST API "> REST API </SelectItem>
-                    <SelectItem value="FullStack Project">
-                      FullStack Project
-                    </SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+              <Label for="message">Mensaje</Label>
+              <Textarea id="message" placeholder="Tu mensaje..." rows="5" v-model="contactForm.message" />
             </div>
 
-            <div class="flex flex-col gap-1.5">
-              <Label for="message">Message</Label>
-              <Textarea
-                id="message"
-                placeholder="Your message..."
-                rows="5"
-                v-model="contactForm.message"
-              />
-            </div>
-
-            <Alert
-              v-if="invalidInputForm"
-              variant="destructive"
-            >
+            <Alert v-if="invalidInputForm" variant="destructive">
               <AlertCircle class="w-4 h-4" />
               <AlertTitle>Error</AlertTitle>
               <AlertDescription>
-                There is an error in the form. Please check your input.
+                Hay un error en el formulario. Por favor, revisa los datos introducidos.
               </AlertDescription>
             </Alert>
 
-            <Button class="mt-4">Send message</Button>
+            <Button class="mt-4">Enviar</Button>
           </form>
         </CardContent>
 

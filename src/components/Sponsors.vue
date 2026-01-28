@@ -2,102 +2,107 @@
 import { Marquee } from "@selemondev/vue3-marquee";
 import "@selemondev/vue3-marquee/dist/style.css";
 
-import {
-  Crown,
-  Vegan,
-  Ghost,
-  Puzzle,
-  Squirrel,
-  Cookie,
-  Drama,
-} from "lucide-vue-next";
+import cliente01 from "@/assets/img/clientes/Clientes Pegsa-01.png"
+import cliente02 from "@/assets/img/clientes/Clientes Pegsa-02.png"
+import cliente03 from "@/assets/img/clientes/Clientes Pegsa-03.png"
+import cliente04 from "@/assets/img/clientes/Clientes Pegsa-04.png"
+import cliente05 from "@/assets/img/clientes/Clientes Pegsa-05.png"
+import cliente06 from "@/assets/img/clientes/Clientes Pegsa-06.png"
+import cliente07 from "@/assets/img/clientes/Clientes Pegsa-07.png"
+import cliente08 from "@/assets/img/clientes/Clientes Pegsa-08.png"
+import cliente09 from "@/assets/img/clientes/Clientes Pegsa-09.png"
+import cliente10 from "@/assets/img/clientes/Clientes Pegsa-10.png"
 
-interface sponsorsProps {
-  icon: string;
+
+
+interface SponsorProps {
   name: string;
+  logo: string;
 }
 
-const sponsors: sponsorsProps[] = [
+const sponsors: SponsorProps[] = [
   {
-    icon: "crown",
-    name: "Acmebrand",
+    name: "DOS BOCAS",
+    logo: cliente01, // Ejemplo: ruta en carpeta public
   },
   {
-    icon: "vegan",
-    name: "Acmelogo",
+    name: "ENSENADA",
+    logo: cliente02,
   },
   {
-    icon: "ghost",
-    name: "Acmesponsor",
+    name: "TAMPICO",
+    logo: cliente03,
   },
   {
-    icon: "puzzle",
-    name: "Acmeipsum",
+    name: "ESCUELA NÁUTICA MERCANTE",
+    logo: cliente04,
   },
   {
-    icon: "squirrel",
-    name: "Acme",
+    name: "HIDALGO",
+    logo: cliente05,
   },
   {
-    icon: "cookie",
-    name: "Accmee",
+    name: "SCT",
+    logo: cliente06,
   },
   {
-    icon: "drama",
-    name: "Acmetech",
+    name: "BANOBRAS",
+    logo: cliente07,
+  },
+  {
+    name: "SEFIPLAN",
+    logo: cliente08,
+  },
+  {
+    name: "PEMEX",
+    logo: cliente09,
+  },
+  {
+    name: "SINFRA",
+    logo: cliente10,
   },
 ];
 
-const iconMap: Record<
-  string,
-  | typeof Crown
-  | typeof Vegan
-  | typeof Ghost
-  | typeof Puzzle
-  | typeof Squirrel
-  | typeof Cookie
-  | typeof Drama
-> = {
-  crown: Crown,
-  vegan: Vegan,
-  ghost: Ghost,
-  puzzle: Puzzle,
-  squirrel: Squirrel,
-  cookie: Cookie,
-  drama: Drama,
-};
+
 </script>
 
 <template>
   <section
     id="sponsors"
-    class="max-w-[75%] mx-auto pb-24 sm:pb-32"
+    class="max-w-[95%] mx-auto pb-5 sm:pb-5 px-4"
   >
-     <h2 class="text-lg text-primary text-center mb-6 tracking-wider">
-        CLIENTES
-      </h2>
+    <h2 class="text-lg text-primary text-center mb-6 tracking-wider">
+      EMPRESAS QUE CONFIAN EN NOSOTROS
+    </h2>
 
-    <div class="mx-auto">
+    <div class="relative w-full">
       <Marquee
-        class="gap-[3rem]"
+        class="py-10"
         :pauseOnHover="true"
         :fade="true"
-        innerClassName="gap-[3rem]"
+        innerClassName="gap-[4rem]"
       >
         <div
-          v-for="{ icon, name } in sponsors"
+          v-for="{ logo, name } in sponsors"
           :key="name"
+          class="group flex flex-col items-center justify-center"
         >
-          <div class="flex items-center text-xl md:text-2xl font-medium">
-            <component
-              :is="iconMap[icon]"
-              class="mr-6"
-              stroke-width="3"
+          <div class="flex items-center justify-center bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 shadow-sm rounded-2xl p-4 w-[250px] h-[160px] transition-all duration-500 group-hover:shadow-xl dark:group-hover:shadow-primary/10 group-hover:border-primary/20 group-hover:-translate-y-2">
+            <img 
+              :src="logo" 
+              :alt="name" 
+              class="max-h-full max-w-full object-contain grayscale  group-hover:grayscale-0 group-hover:opacity-100 group-hover:invert-0 transition-all duration-500"
             />
-            {{ name }}
           </div>
+          
+          <span class="mt-4 text-xs font-semibold text-slate-400 dark:text-zinc-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 uppercase tracking-widest">
+            {{ name }}
+          </span>
         </div>
       </Marquee>
+
+      <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-black to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-black to-transparent z-10 pointer-events-none"></div>
     </div>
   </section>
 </template>

@@ -2,6 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+
 interface HowItWorksProps {
   badgeTitle: string;
   title: string;
@@ -11,7 +12,7 @@ interface HowItWorksProps {
 
 const HowItWorksList: HowItWorksProps[] = [
   {
-    badgeTitle: "Valores",
+    badgeTitle: "VALORES",
     title: "Los principios que guían cada uno de nuestros proyectos",
     description:
       "Confianza, respeto, cooperación, responsabilidad, trabajo en equipo, calidad, profesionalismo y honradez.",

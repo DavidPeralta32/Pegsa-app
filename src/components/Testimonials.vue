@@ -16,57 +16,47 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import acabados from "@/assets/img/que_hacemos/acabados.jpeg";
+import edificacion from "@/assets/img/que_hacemos/edificacion-1.jpeg"
+import estadio from "@/assets/img/que_hacemos/estadio-piranta-fuentes.jpeg"
+import obraCivil from "@/assets/img/que_hacemos/obra-civil.jpeg"
+import tramosCarreteros from "@/assets/img/que_hacemos/tramos-carreteros.jpeg"
 
 interface ReviewProps {
   image: string;
-  name: string;
-  userName: string;
   title: string;
   comment: string;
-  avatar: string
 }
+
+
+
 
 const reviewList: ReviewProps[] = [
   {
-    name: "Sofía Vega",
-    userName: "@sofi",
     title: "EDIFICACIONES",
     comment: "Transformamos visiones en estructuras sólidas. Desarrollamos proyectos integrales de edificación residencial, comercial e industrial",
-    image: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-    avatar: "https://res.cloudinary.com/xxx/image/upload/w_100,q_auto,f_auto/avatar.webp"
+    image: edificacion,
   },
   {
-    name: "Sofía Vega",
-    userName: "@sofi",
     title: "OBRA CIVIL",
     comment: "Infraestructura que impulsa el desarrollo. Ejecutamos proyectos de gran escala con precisión técnica, desde cimentaciones profundas hasta estructuras complejas",
-    image: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-    avatar: "https://res.cloudinary.com/xxx/image/upload/w_100,q_auto,f_auto/avatar.webp"
+    image: estadio,
   },
 
   {
-    name: "Sofía Vega",
-    userName: "@sofi",
     title: "OBRAS DE PROTECCIÓN PORTUARIA",
     comment: "Ingeniería frente al mar. Especialistas en el diseño y construcción, utilizando tecnología avanzada para proteger las zonas portuarias contra el impacto del oleaje y la erosión",
-    image: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-    avatar: "https://res.cloudinary.com/xxx/image/upload/w_100,q_auto,f_auto/avatar.webp"
+    image: obraCivil,
   },
   {
-    name: "Sofía Vega",
-    userName: "@sofi",
     title: "ACABADOS",
     comment: "El detalle que marca la diferencia. Ofrecemos soluciones estéticas y duraderas en interiores y exteriores",
-    image: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-    avatar: "https://res.cloudinary.com/xxx/image/upload/w_100,q_auto,f_auto/avatar.webp"
+    image: acabados,
   },
   {
-    name: "Sofía Vega",
-    userName: "@sofi",
     title: "TRAMOS CARRETEROS",
     comment: "Conectando caminos, acercando destinos. Construcción y mantenimiento de vialidades y carreteras con pavimentos de alta resistencia",
-    image: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-    avatar: "https://res.cloudinary.com/xxx/image/upload/w_100,q_auto,f_auto/avatar.webp"
+    image: tramosCarreteros,
   },
 ];
 
@@ -97,7 +87,7 @@ const autoplay = Autoplay({
 
     <Carousel :plugins="[autoplay]" :opts="{ align: 'start', loop:true }" class="relative w-[80%] sm:w-[90%] lg:max-w-screen-xl mx-auto">
       <CarouselContent>
-        <CarouselItem v-for="review in reviewList" :key="review.name" class="md:basis-1/2 lg:basis-1/3 flex">
+        <CarouselItem v-for="review in reviewList" :key="review.title" class="md:basis-1/2 lg:basis-1/3 flex">
           <Card class="overflow-hidden bg-muted/50 dark:bg-card">
             <!-- IMAGEN -->
             <div class="relative h-48 w-full">
