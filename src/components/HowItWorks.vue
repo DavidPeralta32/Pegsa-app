@@ -2,6 +2,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+import valores from "@/assets/img/quienesSomos/valores.png";
+import vision from "@/assets/img/quienesSomos/vision.png";
+import mision from "@/assets/img/quienesSomos/mision.png";
+import objetivos from "@/assets/img/quienesSomos/objetivos.png";
+
 
 interface HowItWorksProps {
   badgeTitle: string;
@@ -16,28 +21,28 @@ const HowItWorksList: HowItWorksProps[] = [
     title: "Los principios que guían cada uno de nuestros proyectos",
     description:
       "Confianza, respeto, cooperación, responsabilidad, trabajo en equipo, calidad, profesionalismo y honradez.",
-    image: "roboto.png",
+    image: valores,
   },
   {
     badgeTitle: "VISIÓN",
     title: "Construir liderazgo y confianza a largo plazo",
     description:
       "Ser la empresa constructora veracruzana líder en infraestructura portuaria, urbana e industrial, reconocida a nivel nacional por su calidad, transparencia y compromiso con el desarrollo sostenible, generando confianza en cada obra que realizamos.",
-    image: "runner.png",
+    image: vision,
   },
   {
     badgeTitle: "MISIÓN",
     title: "Transformar ideas en obras que impulsan el desarrollo",
     description:
       "Diseñar, construir y ejecutar proyectos de infraestructura que fortalezcan el crecimiento económico y social de Veracruz y México, ofreciendo soluciones innovadoras y seguras, con un equipo altamente profesional y comprometido con la excelencia, la ética y la responsabilidad social.",
-    image: "pacheco.png",
+    image: mision,
   },
   {
     badgeTitle: "OBJETIVO GENERAL",
     title: "Crecimiento sostenido con resultados medibles",
     description:
       "Brindar servicios de construcción de alta calidad, seguros y sostenibles, cumpliendo con plazos y requerimientos establecidos, logrando un índice de satisfacción del cliente ≥ 90%, y aumentar en 20% la participación en licitaciones públicas y privadas para 2026, consolidando el crecimiento competitivo de la empresa.",
-    image: "gamestation.png",
+    image: objetivos,
   },
 ];
 </script>
@@ -79,15 +84,15 @@ const HowItWorksList: HowItWorksProps[] = [
             </CardTitle>
           </CardHeader>
 
-          <CardContent class="text-muted-foreground w-[80%]">
+          <CardContent class="text-muted-foreground w-[80%] text-justify">
             {{ description }}
           </CardContent>
         </Card>
 
         <img
           :src="image"
-          :alt="`Image describing ${title} `"
-          className="w-[150px]  md:w-[250px] lg:w-[300px] mx-auto -scale-x-100 "
+          :alt="`Descripcion de la imagen ${title} `"
+          className="w-[150px]  md:w-[250px] lg:w-[300px] mx-auto  "
         />
         <div
           :class="[

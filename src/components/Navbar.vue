@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import logoPegsa from '@/assets/log-pegsa.jpeg'
+import logoPegsaCircular from '@/assets/logo-pegsa-circular.png'
 
 import { useColorMode } from "@vueuse/core";
 const mode = useColorMode();
@@ -89,10 +90,10 @@ const isOpen = ref<boolean>(false);
               <SheetTitle class="flex items-center">
                 <a href="/" class="flex items-center">
                   <div
-                    class="bg-gradient-to-tr from-primary/70 via-primary to-primary/70 rounded-lg w-13 h-11 mr-2 border text-white justify-center">
-                    <img :src="logoPegsa" alt="PEGSA" class="w-13 h-10 object-contain" />
+                    class="via-primary  rounded-lg w-13 h-11 mr-2 border text-white justify-center">
+                    <img :src="logoPegsaCircular" alt="PEGSA" class="w-13 h-10 object-contain" />
                   </div>
-
+                  Pegsa
                 </a>
               </SheetTitle>
             </SheetHeader>

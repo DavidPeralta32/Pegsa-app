@@ -11,7 +11,7 @@ import logoCircular from "@/assets/log-pegsa.jpeg";
         
         <div class="col-span-full xl:col-span-2">
           <a href="#" class="flex font-bold items-center gap-3">
-            <div class="w-50 h-30 rounded-full overflow-hidden border-2 border-primary/20" style="margin-top: 30px;" >
+            <div class="w-50 h-30 rounded-full overflow-hidden border-2 border-primary/20 text-center" style="margin-top: 30px;" >
               <img 
                 :src="logoCircular" 
                 alt="PEGSA Logo" 
@@ -47,7 +47,7 @@ import logoCircular from "@/assets/log-pegsa.jpeg";
       
       <section>
         <h3 class="text-sm opacity-70">
-          &copy; 2026 Designed and developed by
+          &copy; 2026 All Rights Reserved by
           <a href="#" class="text-primary transition-all border-primary hover:border-b-2 font-medium">
             Pegsa - Construcciones
           </a>
