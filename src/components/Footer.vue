@@ -11,7 +11,7 @@ import logoCircular from "@/assets/log-pegsa.jpeg";
         
         <div class="col-span-full xl:col-span-2">
           <a href="#" class="flex font-bold items-center gap-3">
-            <div class="w-50 h-30 rounded-full overflow-hidden border-2 border-primary/20 text-center" style="margin-top: 30px;" >
+            <div class="w-50 h-30 rounded-full overflow-hidden border-2 border-primary/20 text-center" style="margin-top: 20px;text-align: center !important;" >
               <img 
                 :src="logoCircular" 
                 alt="PEGSA Logo" 

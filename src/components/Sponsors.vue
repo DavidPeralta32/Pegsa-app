@@ -95,7 +95,7 @@ const sponsors: SponsorProps[] = [
             />
           </div>
           
-          <span class="mt-4 text-xs font-semibold text-slate-400 dark:text-zinc-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 uppercase tracking-widest">
+          <span class="mt-4 text-xs font-semibold text-slate-400 dark:text-zinc-500 opacity-0 group-hover:!opacity-100 transition-opacity duration-500 uppercase tracking-widest">
             {{ name }}
           </span>
         </div>

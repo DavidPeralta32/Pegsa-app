@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
-import logoPegsa from '@/assets/log-pegsa.jpeg'
+import logoPegsa from '@/assets/img/log-pegsa-sin-fondo.png'
 import logoPegsaCircular from '@/assets/logo-pegsa-circular.png'
 
 import { useColorMode } from "@vueuse/core";
@@ -72,7 +72,7 @@ const isOpen = ref<boolean>(false);
   }">
     <a href="/" class="font-bold text-lg flex items-center">
       <div
-        class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-13 h-12 mr-2 flex items-center justify-center">
+        class=" to-primary rounded-lg w-13 h-12 mr-2 flex items-center justify-center">
         <img :src="logoPegsa" alt="PEGSA" class="w-13 h-12 object-contain" />
       </div>
       <!--PEGSA-->
