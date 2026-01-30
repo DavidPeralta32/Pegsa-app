@@ -50,9 +50,9 @@ const HowItWorksList: HowItWorksProps[] = [
 <template>
   <section
     id="features"
-    class="container py-24 sm:py-32"
+    class="container py-20 sm:py-20"
   >
-    <div class="text-center mb-8">
+    <div class="text-center mb-2">
       <h2 class="text-lg text-primary text-center mb-2 tracking-wider">
         Nosotros
       </h2>
@@ -92,7 +92,7 @@ const HowItWorksList: HowItWorksProps[] = [
         <img
           :src="image"
           :alt="`Descripcion de la imagen ${title} `"
-          className="w-[150px]  md:w-[250px] lg:w-[300px] mx-auto  "
+          class="hidden sm:block w-[150px] md:w-[250px] lg:w-[300px] mx-auto"
         />
         <div
           :class="[

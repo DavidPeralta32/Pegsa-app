@@ -2,12 +2,12 @@
 import { useColorMode } from "@vueuse/core";
 const mode = useColorMode();
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-vue-next";
+
 import { ref } from 'vue'
 
 import bgDefault from "@/assets/img/slider-bg-2.jpg"
+import bg2 from "@/assets/img/slider-bg-1.jpg"
+import bg3 from "@/assets/img/slider-bg-3.jpg"
 
 const slides = ref([
   {
@@ -16,50 +16,37 @@ const slides = ref([
     subtitle: "CONSTRUCCIÓN SEGURA, EFICIENTE Y DE CALIDAD"
   },
   {
-    src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
-    title: "INFRAESTRUCTURA DE VANGUARDIA",
-    subtitle: "SOLUCIONES INTEGRALES PARA TU PROYECTO"
+    src: bg2,
+    title: "TU VISIÓN, NUESTRA CONSTRUCCIÓN",
+    subtitle: "TRANSFORMAMOS IDEAS EN PROYECTOS SÓLIDOS Y EXITOSOS."
   },
   {
-    src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
-    title: "COMPROMISO CON LA EXCELENCIA",
-    subtitle: "CONSTRUYENDO EL FUTURO DE MÉXICO"
+    src: bg3,
+    title: "PROYECTOS A TU MEDIDA, CON LOS MÁS ALTOS ESTÁNDARES.",
+    subtitle: "COMPROMISO, EXCELENCIA Y CONFIANZA EN CADA OBRA."
   }
 ])
 
 </script>
-
-<!--<template>
-<div id="container">
-  <v-parallax :src="bg" class="h-screen w-full pa-0 mt-[-80px]">
-    <div class="absolute inset-0 bg-black/40"></div>
-
-    <v-container class="fill-height relative">
-      <v-row
-        class="justify-start align-center flex-column-reverse flex-md-row"
-      >
-        <v-col cols="12" md="9">
-          <h4 class="text-h4 mb-5">DE LA PLANIFICACIÓN A LA ENTREGA: CONFIANZA GARANTIZADA</h4>
-          <h4 class="text-h4 mb-5">CONSTRUCCIÓN SEGURA,EFICIENTE Y DE CALIDAD</h4>
-          <v-btn class="elevation-4 rounded-xl mb-4" color="primary">
-            LEER MAS
-          </v-btn>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-parallax>
-</div>
-
-
-</template>-->
-
 <template>
   <div id="container">
     <v-parallax class="h-screen w-full pa-0 mt-[-80px]">
 
-      <v-carousel :show-arrows="true" cycle hide-delimiters interval="7000" height="100vh" class="absolute inset-0">
+      <v-carousel class="absolute inset-0 z-10" show-arrows cycle hide-delimiters interval="7000"
+        height="100vh">
+        <template v-slot:prev="{ props }">
+          <v-btn icon size="large" class="carousel-arrow" @click="props.onClick">
+            <v-icon>mdi-chevron-left</v-icon>
+          </v-btn>
+        </template>
+
+        <template v-slot:next="{ props }">
+          <v-btn icon size="large" class="carousel-arrow" @click="props.onClick">
+            <v-icon>mdi-chevron-right</v-icon>
+          </v-btn>
+        </template>
         <v-carousel-item v-for="(item, i) in slides" :key="i" :src="item.src" cover>
-          <div class="absolute inset-0 bg-black/40"></div>
+          <div class="absolute inset-0 bg-black/40 z-0"></div>
 
           <v-container class="fill-height relative">
             <v-row class="justify-start align-center flex-column-reverse flex-md-row">
@@ -84,6 +71,23 @@ const slides = ref([
 </template>
 
 <style scoped>
+:deep(.carousel-arrow) {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 9999px;
+  width: 52px;
+  height: 52px;
+  transition: all 0.3s ease;
+}
+
+:deep(.carousel-arrow:hover) {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+:deep(.carousel-arrow .v-icon) {
+  font-size: 32px;
+}
 
 .img-shadow-animation {
   animation-name: img-shadow-animation;
