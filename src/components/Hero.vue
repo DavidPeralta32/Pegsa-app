@@ -11,17 +11,20 @@ const slides = ref([
   {
     src: bgDefault, // Tu imagen original
     title: "DE LA PLANIFICACIÓN A LA ENTREGA: CONFIANZA GARANTIZADA",
-    subtitle: "CONSTRUCCIÓN SEGURA, EFICIENTE Y DE CALIDAD"
+    subtitle: "CONSTRUCCIÓN SEGURA, EFICIENTE Y DE CALIDAD",
+    url: "#team"
   },
   {
     src: bg2,
     title: "TU VISIÓN, NUESTRA CONSTRUCCIÓN",
-    subtitle: "TRANSFORMAMOS IDEAS EN PROYECTOS SÓLIDOS Y EXITOSOS."
+    subtitle: "TRANSFORMAMOS IDEAS EN PROYECTOS SÓLIDOS Y EXITOSOS.",
+    url: "#features"
   },
   {
     src: bg3,
     title: "PROYECTOS A TU MEDIDA, CON LOS MÁS ALTOS ESTÁNDARES.",
-    subtitle: "COMPROMISO, EXCELENCIA Y CONFIANZA EN CADA OBRA."
+    subtitle: "COMPROMISO, EXCELENCIA Y CONFIANZA EN CADA OBRA.",
+    url: "#contact"
   }
 ])
 
@@ -55,7 +58,8 @@ const slides = ref([
                 <h4 class="text-h4 mb-5 text-primary animate__animated animate__backInUp animate__delay-1s">
                   {{ item.subtitle }}
                 </h4>
-                <v-btn class="animate__animated animate__backInUp animate__delay-1s elevation-4 rounded-xl mb-4" color="primary" size="large">
+                <v-btn class="animate__animated animate__backInUp animate__delay-1s elevation-4 rounded-xl mb-4" color="primary" size="large"
+                :href="item.url">
                   LEER MÁS
                 </v-btn>
               </v-col>
