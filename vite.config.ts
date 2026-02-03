@@ -12,7 +12,7 @@ export default defineConfig({
       plugins: [tailwind(), autoprefixer()],
     },
   },
-  base: '/Pegsa-app/',
+  base: './',
   plugins: [vue()],
   resolve: {
     alias: {

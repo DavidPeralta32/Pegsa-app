@@ -32,7 +32,7 @@ const handleSubmit = () => {
   const { firstName, lastName, email, message } = contactForm;
   console.log(contactForm);
 
-  const mailToLink = `mailto:davi32peralta@gmail.com?subject=Contacto&body=Hola mi nombre es: ${firstName} ${lastName}, mi correo es: ${email}. %0D%0A${message}`;
+  const mailToLink = `mailto:contacto@pegsa.com?subject=Contacto&body=Hola mi nombre es: ${firstName} ${lastName}, mi correo es: ${email}. %0D%0A${message}`;
 
   window.location.href = mailToLink;
 };
