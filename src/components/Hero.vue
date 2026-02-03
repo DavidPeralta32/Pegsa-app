@@ -49,13 +49,13 @@ const slides = ref([
           <v-container class="fill-height relative">
             <v-row class="justify-start align-center flex-column-reverse flex-md-row">
               <v-col cols="12" md="9" class="text-white">
-                <h4 class="text-h4 mb-2 font-weight-bold">
+                <h4 class="animate__animated animate__backInDown text-h4 mb-2 font-weight-bold ">
                   {{ item.title }}
                 </h4>
-                <h4 class="text-h4 mb-5 text-primary">
+                <h4 class="text-h4 mb-5 text-primary animate__animated animate__backInUp animate__delay-1s">
                   {{ item.subtitle }}
                 </h4>
-                <v-btn class="elevation-4 rounded-xl mb-4" color="primary" size="large">
+                <v-btn class="animate__animated animate__backInUp animate__delay-1s elevation-4 rounded-xl mb-4" color="primary" size="large">
                   LEER MÁS
                 </v-btn>
               </v-col>
@@ -123,5 +123,20 @@ const slides = ref([
   to {
     @apply border-t-primary/60;
   }
+}
+
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+/* Aplicamos la animación a la imagen interna de Vuetify */
+:deep(.v-window-item--active .v-img__img) {
+  animation: kenburns 10s ease-out forwards;
 }
 </style>
