@@ -139,4 +139,11 @@ const slides = ref([
 :deep(.v-window-item--active .v-img__img) {
   animation: kenburns 10s ease-out forwards;
 }
+
+
+@media (max-width: 767px) {
+  .text-h4 {
+    font-size: 1.5rem !important;
+  }
+}
 </style>

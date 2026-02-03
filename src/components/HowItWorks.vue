@@ -62,7 +62,7 @@ const HowItWorksList: HowItWorksProps[] = [
       </h2>
     </div>
 
-    <div class="lg:w-[80%] mx-auto relative">
+    <div class="lg:w-[80%] mx-auto relative contenedor-movil">
       <div
         v-for="(
           { badgeTitle, title, description, image }, index
@@ -106,3 +106,23 @@ const HowItWorksList: HowItWorksProps[] = [
     </div>
   </section>
 </template>
+
+<style scoped>
+
+/* Media Query para móviles (Pantallas menores a 768px) */
+@media (max-width: 767px) {
+  .contenedor-movil {
+    width: 95% !important;
+    margin: 0 auto; /* Para que quede centrado */
+  }
+
+  .text-2xl{
+    font-size: 1.3rem !important;
+  }
+
+  .p-6{
+    padding: 0.5rem !important;
+  }
+}
+
+</style>
