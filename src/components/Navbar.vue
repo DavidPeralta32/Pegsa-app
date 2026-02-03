@@ -67,7 +67,7 @@ const isOpen = ref<boolean>(false);
     'shadow-dark': mode === 'dark',
     'w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true,
   }">
-    <a href="#container" class="font-bold text-lg flex items-center">
+    <a href="#inicio" class="font-bold text-lg flex items-center">
       <div
         class=" to-primary rounded-lg w-13 h-12 mr-2 flex items-center justify-center">
         <img :src="logoPegsa" alt="PEGSA" class="w-13 h-12 object-contain" />
@@ -85,7 +85,7 @@ const isOpen = ref<boolean>(false);
           <div>
             <SheetHeader class="mb-4 ml-4">
               <SheetTitle class="flex items-center">
-                <a href="#container" class="flex items-center">
+                <a href="#inicio" class="flex items-center">
                   <div
                     class="via-primary  rounded-lg w-13 h-11 mr-2 border text-white justify-center">
                     <img :src="logoPegsaCircular" alt="PEGSA" class="w-13 h-10 object-contain" />
