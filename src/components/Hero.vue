@@ -12,25 +12,25 @@ const slides = ref([
     src: bgDefault, // Tu imagen original
     title: "DE LA PLANIFICACIÓN A LA ENTREGA: CONFIANZA GARANTIZADA",
     subtitle: "CONSTRUCCIÓN SEGURA, EFICIENTE Y DE CALIDAD",
-    url: "#team"
+    url: "#proyectos"
   },
   {
     src: bg2,
     title: "TU VISIÓN, NUESTRA CONSTRUCCIÓN",
     subtitle: "TRANSFORMAMOS IDEAS EN PROYECTOS SÓLIDOS Y EXITOSOS.",
-    url: "#features"
+    url: "#nosotros"
   },
   {
     src: bg3,
     title: "PROYECTOS A TU MEDIDA, CON LOS MÁS ALTOS ESTÁNDARES.",
     subtitle: "COMPROMISO, EXCELENCIA Y CONFIANZA EN CADA OBRA.",
-    url: "#contact"
+    url: "#contacto"
   }
 ])
 
 </script>
 <template>
-  <div id="container">
+  <div id="inicio">
     <v-parallax class="h-screen w-full pa-0 mt-[-80px]">
 
       <v-carousel class="absolute inset-0 z-10" show-arrows cycle hide-delimiters interval="7000"

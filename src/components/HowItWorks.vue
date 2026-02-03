@@ -49,7 +49,7 @@ const HowItWorksList: HowItWorksProps[] = [
 
 <template>
   <section
-    id="features"
+    id="nosotros"
     class="container py-20 sm:py-20"
   >
     <div class="text-center mb-2">

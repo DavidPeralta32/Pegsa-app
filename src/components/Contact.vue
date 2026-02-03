@@ -39,7 +39,7 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <section id="contact" class="container py-24 sm:py-32">
+  <section id="contacto" class="container py-24 sm:py-32">
     <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
         <div class="mb-4">
@@ -47,7 +47,7 @@ const handleSubmit = () => {
 
           <h2 class="text-3xl md:text-4xl font-bold">Contactate con nosotros</h2>
         </div>
-        <p class="mb-8 text-muted-foreground lg:w-5/6">
+        <p class="mb-8 text-muted-foreground lg:w-5/6 text-justify">
           Estamos listos para impulsar tu próximo proyecto. Nuestro equipo de expertos está disponible para resolver tus dudas y ofrecerte la asesoría técnica que necesitas.
         </p>
 

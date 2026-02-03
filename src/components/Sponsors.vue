@@ -68,7 +68,7 @@ const sponsors: SponsorProps[] = [
 
 <template>
   <section
-    id="sponsors"
+    id="empresas"
     class="max-w-[95%] mx-auto pb-5 sm:pb-5 px-4"
   >
     <h2 class="text-lg text-primary text-center mb-6 tracking-wider">

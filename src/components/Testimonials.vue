@@ -69,7 +69,7 @@ const autoplay = Autoplay({
 </script>
 
 <template>
-  <section id="testimonials" class="container py-24 sm:py-32">
+  <section id="servicios" class="container py-24 sm:py-32">
     <div class="text-center mb-8">
       <h2 class="text-lg text-primary text-center mb-2 tracking-wider">
         QUE HACEMOS
