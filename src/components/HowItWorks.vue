@@ -54,7 +54,7 @@ const HowItWorksList: HowItWorksProps[] = [
   >
     <div class="text-center mb-2">
       <h2 class="text-lg text-primary text-center mb-2 tracking-wider">
-        Nosotros
+        NOSOTROS
       </h2>
 
       <h2 class="text-3xl md:text-4xl text-center font-bold">

@@ -13,12 +13,11 @@ import mapaPegsa from "@/components/Mapa.vue";
 <template>
   <Navbar />
   <Hero />
-  <HowItWorks />
   <Testimonials />
   <Sponsors />
   <Team />
-
+  <HowItWorks />
   <Contact />
-  <mapaPegsa/>
+  <mapaPegsa />
   <Footer />
 </template>
